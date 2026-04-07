@@ -1,0 +1,26 @@
+# ── root-level ignores ────────────────────────────────────────────────────────
+plotHiggsMassRecoil.py
+references/
+
+# ── Camp2 ─────────────────────────────────────────────────────────────────────
+Camp2/diag/
+Camp2/old_stuff*/
+Camp2/Output
+Camp2/Output/
+Camp2/output
+Camp2/output/
+Camp2/slides/
+Camp2/nohup.out
+
+# plots: ignore all binary/generated files but keep HTML for GitHub Pages
+Camp2/plots/*
+!Camp2/plots/*.html
+
+# ── common ignores ────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.root
+*.log
+*.tmp
+.DS_Store

@@ -1,0 +1,6 @@
+[submodule "FCC_Full_Sim_Tutorial/fcc-tutorials"]
+	path = FCC_Full_Sim_Tutorial/fcc-tutorials
+	url = https://github.com/HEP-FCC/fcc-tutorials
+[submodule "FCC_Full_Sim_Tutorial/CLDConfig"]
+	path = FCC_Full_Sim_Tutorial/CLDConfig
+	url = https://github.com/key4hep/CLDConfig.git
