@@ -1,6 +1,6 @@
 # FCCee MAPS ECAL Study
 
-A physics performance study exploring the replacement of the baseline CLD ECAL (analog 5×5 mm² Si pads) with MAPS-like granular calorimeters of various pixel sizes. The goal is to quantify the gain in photon energy resolution and π⁰ → γγ separation as a function of pixel pitch, and to assess feasibility given cooling constraints.
+A physics performance study exploring the addition of an ARC-like structure to the baseline CLD ECAL. The goal is to study the loss in photon energy resolution and π⁰ → γγ separation with the addition of a possible ARC.
 
 ---
 
@@ -44,7 +44,7 @@ FCCee/
 
 ### 1. Clone the repository
 ```bash
-git clone --recurse-submodules https://github.com/pbhattarai1s/FCCee.git
+git clone --recurse-submodules https://github.com/AnnaTiparticle/FCCee.git
 cd FCCee
 ```
 
