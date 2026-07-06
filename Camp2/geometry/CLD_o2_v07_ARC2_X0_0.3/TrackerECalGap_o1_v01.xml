@@ -1,0 +1,18 @@
+<lccdd>
+    <comment>AUTO-GENERATED variant: Plexiglass fill = 0.3 X0 (102.22mm of 340.75mm X0), inside the unchanged 200.0mm TrackerECalGap envelope. Remainder of envelope is unfilled (vacuum/air). Derived from CLD_o2_v07_ARC2, which matches the true k4geo reference ECal (0.50mm Si) plus the 200mm gap insert.</comment>
+
+
+    <comment>Passive material insert between the Outer Tracker and the ECal barrel, for material-budget studies. Not sensitive - no readout.</comment>
+
+    <detectors>
+        <detector name="TrackerECalGap" type="TubeSupport_o1_v01" reflect="true" vis="SupportVis">
+            <envelope>
+                <shape type="Assembly"/>
+            </envelope>
+            <section start="0*mm" end="TrackerECalGap_half_length"
+                     rMin="TrackerECalGap_inner_radius" rMax="TrackerECalGap_inner_radius + 102.2250*mm"
+                     material="Plexiglass" name="TrackerECalGapCylinder" vis="SupportVis"/>
+        </detector>
+    </detectors>
+
+</lccdd>

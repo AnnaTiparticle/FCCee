@@ -24,3 +24,4 @@ __pycache__/
 *.log
 *.tmp
 .DS_Store
+Camp2/slurm_logs/

@@ -1,8 +1,8 @@
 """
-# Camp2 steering file: single photon gun, nominal CLD baseline geometry.
+Camp 2 steering file: single photon gun, 50 um MAPS ECAL geometry.
 
 Changes from cld_steer.py baseline:
-#  - SIM.compactFile   : baseline geometry, 5.1 mm ECal cells
+  - SIM.compactFile  : local geometry with 50 um cells, 12 um Si
   - SIM.enableGun    : True  (particle gun on)
   - SIM.gun.particle : gamma (was mu-)
   - SIM.gun.energy   : 10 GeV
@@ -18,7 +18,7 @@ SIM = DD4hepSimulation()
 
 # --- Geometry: local copy with 500 um cells and 12 um Si ---
 # CAMP2_DIR is exported by run_sim.sh (avoids __file__ which is undefined in ddsim exec())
-SIM.compactFile = os.path.join(os.environ["CAMP2_DIR"], "geometry/CLD_o2_v07_baseline/CLD_o2_v07.xml")
+SIM.compactFile = os.path.join(os.environ["CAMP2_DIR"], "geometry/CLD_o2_v07_100um/CLD_o2_v07.xml")
 
 SIM.crossingAngleBoost = 0.015
 SIM.enableDetailedShowerMode = True
@@ -31,8 +31,7 @@ SIM.macroFile = ""
 SIM.numberOfEvents = 10       # override with -N on command line
 # Energy scan: read from env var (set by run_energy_scan.sh), default 10 GeV
 _energy_gev = float(os.environ.get("PHOTON_ENERGY_GEV", "10"))
-_suffix = os.environ.get("OUTPUT_SUFFIX", "")
-SIM.outputFile = f"Output/scan_baseline{_suffix}/photon_{int(_energy_gev)}GeV_baseline_SIM.edm4hep.root"
+SIM.outputFile = f"Output/scan_passiveSi/photon_{int(_energy_gev)}GeV_100um_SIM.edm4hep.root"
 SIM.printLevel = 3
 SIM.runType = "batch"
 SIM.skipNEvents = 0
@@ -42,7 +41,7 @@ SIM.vertexSigma  = [0.0, 0.0, 0.0, 0.0]
 
 # --- Sensitive detector actions (unchanged) ---
 SIM.action.tracker = "Geant4TrackerWeightedAction"
-SIM.action.calo    = "Geant4ScintillatorCalorimeterAction"
+SIM.action.calo    = "Geant4SimpleCalorimeterAction"
 SIM.action.mapActions = {}
 
 # --- Magnetic field (unchanged) ---
@@ -99,7 +98,7 @@ SIM.physics.decays  = False
 SIM.physics.list    = "FTFP_BERT"
 SIM.physics.pdgfile = os.path.join(os.environ.get("DD4hepINSTALL"), "examples/DDG4/examples/particle.tbl")
 SIM.physics.rangecut = 0.7*mm
-SIM.physics.rejectPDGs = {1,2,3,4,5,6,21,23,24,25}
+SIM.physics.rejectPDGs = set()
 
 # --- Random (unchanged) ---
 SIM.random.enableEventSeed = True

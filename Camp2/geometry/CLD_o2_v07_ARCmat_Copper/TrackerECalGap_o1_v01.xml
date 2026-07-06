@@ -1,0 +1,18 @@
+<lccdd>
+    <comment>AUTO-GENERATED variant: full 200mm TrackerECalGap envelope filled with Copper (was Plexiglass in ARC1). Derived from CLD_o2_v07_ARC1.</comment>
+
+
+    <comment>Passive material insert between the Outer Tracker and the ECal barrel, for material-budget studies. Not sensitive - no readout.</comment>
+
+    <detectors>
+        <detector name="TrackerECalGap" type="TubeSupport_o1_v01" reflect="true" vis="SupportVis">
+            <envelope>
+                <shape type="Assembly"/>
+            </envelope>
+            <section start="0*mm" end="TrackerECalGap_half_length"
+                     rMin="TrackerECalGap_inner_radius" rMax="TrackerECalGap_outer_radius"
+                     material="Copper" name="TrackerECalGapCylinder" vis="SupportVis"/>
+        </detector>
+    </detectors>
+
+</lccdd>

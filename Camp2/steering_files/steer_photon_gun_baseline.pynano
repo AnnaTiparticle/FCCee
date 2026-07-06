@@ -1,0 +1,9 @@
+Host sdf-login
+    HostName sdfssh002.slac.stanford.edu
+    User oliva
+
+Host sdfiana007
+    HostName sdfiana007
+    User oliva
+    ProxyJump sdf-login
+
