@@ -2,7 +2,7 @@
 Camp 2 steering file: single photon gun, ARC1 CLD geometry.
 
 Changes from cld_steer.py baseline:
-  - SIM.compactFile  : geometry/CLD_o2_v07_ARC1/CLD_o2_v07.xml
+  - SIM.compactFile  : geometry/CLD_o2_v07_ARC1_vac/CLD_o2_v07.xml
   - SIM.enableGun    : True  (particle gun on)
   - SIM.gun.particle : gamma (was mu-)
   - SIM.gun.energy   : 10 GeV
@@ -18,7 +18,7 @@ SIM = DD4hepSimulation()
 
 # --- Geometry: ARC1 CLD variant ---
 # CAMP2_DIR is exported by run_sim.sh (avoids __file__ which is undefined in ddsim exec())
-SIM.compactFile = os.path.join(os.environ["CAMP2_DIR"], "geometry/CLD_o2_v07_ARC1/CLD_o2_v07.xml")
+SIM.compactFile = os.path.join(os.environ["CAMP2_DIR"], "geometry/CLD_o2_v07_ARC1_vac/CLD_o2_v07.xml")
 
 SIM.crossingAngleBoost = 0.015
 SIM.enableDetailedShowerMode = True
@@ -32,7 +32,7 @@ SIM.numberOfEvents = 10       # override with -N on command line
 # Energy scan: read from env var (set by run_energy_scan.sh), default 10 GeV
 _energy_gev = float(os.environ.get("PHOTON_ENERGY_GEV", "10"))
 _suffix = os.environ.get("OUTPUT_SUFFIX", "")
-SIM.outputFile = f"Output/scan_ARC1{_suffix}/photon_{int(_energy_gev)}GeV_ARC1_SIM.edm4hep.root"
+SIM.outputFile = f"Output/scan_CLD_o2_v07_ARC1_vac/photon_{int(_energy_gev)}GeV_CLD_o2_v07_ARC1_vac_SIM.edm4hep.root"
 SIM.printLevel = 3
 SIM.runType = "batch"
 SIM.skipNEvents = 0
